@@ -64,3 +64,4 @@ C:\Users\Kabum\Documents\codigos\AcessoDados2\obj\Debug\net9.0\refint\AcessoDado
 C:\Users\Kabum\Documents\codigos\AcessoDados2\obj\Debug\net9.0\AcessoDados2.pdb
 C:\Users\Kabum\Documents\codigos\AcessoDados2\obj\Debug\net9.0\AcessoDados2.genruntimeconfig.cache
 C:\Users\Kabum\Documents\codigos\AcessoDados2\obj\Debug\net9.0\ref\AcessoDados2.dll
+C:\Users\Kabum\Documents\codigos\AcessoDados2\obj\Debug\net9.0\AcessoDados2.sourcelink.json

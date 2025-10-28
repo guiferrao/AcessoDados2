@@ -8,7 +8,7 @@ namespace AcessoDados2
 {
     class Program
     {
-        private const string CONNECTION_STRING = @"Server=localhost,1433;Database=Test;User ID=sa;Password=Vasco748997!;TrustServerCertificate=True";
+        private const string CONNECTION_STRING = @"Server=localhost,1433;Database=Test;User ID=sa;Password=Password123;TrustServerCertificate=True";
         static void Main(string[] args)
         {
             //ReadUsers();
