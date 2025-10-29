@@ -1,5 +1,6 @@
 ﻿using System;
 using AcessoDados2.Models;
+using AcessoDados2.Repositories;
 using Dapper;
 using Dapper.Contrib.Extensions;
 using Microsoft.Data.SqlClient;
@@ -11,81 +12,33 @@ namespace AcessoDados2
         private const string CONNECTION_STRING = @"Server=localhost,1433;Database=Test;User ID=sa;Password=Password123;TrustServerCertificate=True";
         static void Main(string[] args)
         {
-            //ReadUsers();
-            //ReadUser();
-            //CreateUser();
-            //UpdateUser();
-            //DeleteUser();
+            var connection = new SqlConnection(CONNECTION_STRING);
+            connection.Open();
+
+            ReadUsers(connection);
+            ReadRoles(connection);
+            
+            connection.Close();
         }
 
-        public static void ReadUsers()
+        public static void ReadUsers(SqlConnection connection)
         {
-            using (var connection = new SqlConnection(CONNECTION_STRING))
-            {
-                var users = connection.GetAll<User>();
+            var repository = new UserRepository(connection);
+            var users = repository.Get();
 
-                foreach (var user in users)
-                {
-                    Console.WriteLine(user.Name);
-                }
-            }
-        }
-
-        public static void ReadUser()
-        {
-            using (var connection = new SqlConnection(CONNECTION_STRING))
-            {
-                var user = connection.Get<User>(1);
+            foreach (var user in users)
                 Console.WriteLine(user.Name);
-            }
-        }
 
-        public static void CreateUser()
-        {
-            var user = new User()
-            {
-                Bio = "Teste de Create",
-                Email = "teste2@gmail.com",
-                Image = "https://...",
-                Name = "Create teste",
-                PasswordHash = "HASH",
-                Slug = "teste-create"
-            };
-
-            using (var connection = new SqlConnection(CONNECTION_STRING))
-            {
-                connection.Insert<User>(user);
-                Console.WriteLine("Cadastro realizado");
-            }
-        }
-
-        public static void UpdateUser()
-        {
-            var user = new User()
-            {
-                Id = 2,
-                Bio = "Teste de Update",
-                Email = "teste2@gmail.com",
-                Image = "https://...",
-                Name = "Update teste",
-                PasswordHash = "HASH",
-                Slug = "teste-create"
-            };
-            using (var connection = new SqlConnection(CONNECTION_STRING))
-            {
-                connection.Update<User>(user);
-                Console.WriteLine("Usuario alterado com sucesso");
-            }
         }
         
-        public static void DeleteUser()
+        public static void ReadRoles(SqlConnection connection)
         {
-            using (var connection = new SqlConnection(CONNECTION_STRING))
-            {
-                var user = connection.Get<User>(2);
-                connection.Delete<User>(user);
-                Console.WriteLine("Usuario removido do banco");
-            }
+            var repository = new RoleRepository(connection);
+            var roles = repository.Get();
+
+            foreach (var role in roles)
+                Console.WriteLine(role.Name);
+            
         }
     }
 }
