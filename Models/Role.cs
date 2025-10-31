@@ -1,4 +1,5 @@
 using Dapper.Contrib.Extensions;
+using System.Collections.Generic;
 
 namespace AcessoDados2.Models
 {

@@ -1,9 +1,6 @@
-using System.Security.Cryptography.X509Certificates;
 using AcessoDados2.Models;
-using AcessoDados2.Repositories;
 using Dapper;
 using Microsoft.Data.SqlClient;
-using System.Linq;
 
 namespace AcessoDados2.Repositories
 {
@@ -11,9 +8,8 @@ namespace AcessoDados2.Repositories
     {
         private readonly SqlConnection _connection;
 
-        public UserRepository(SqlConnection connection) : base(connection)
+        public UserRepository(SqlConnection connection): base(connection)
             => _connection = connection;
-            
         public List<User> GetWithRoles()
         {
             var query = @"

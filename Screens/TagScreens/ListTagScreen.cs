@@ -1,0 +1,25 @@
+using AcessoDados2.Models;
+using AcessoDados2.Repositories;
+
+namespace AcessoDados2.Screens.TagScreens
+{
+    public static class ListTagScreen
+    {
+        public static void Load()
+        {
+            Console.WriteLine("Lista de tags");
+            Console.WriteLine("--------------");
+            List();
+            Console.ReadKey();
+            MenuTagScreen.Load();
+        }
+        
+        private static void List()
+        {
+            var repository = new Repository<Tag>(Database.Connection);
+            var tags = repository.Get();
+            foreach(var item in tags)
+                Console.WriteLine($"{item.Id} - {item.Name} ({item.Slug})");
+        }
+    }
+}

@@ -1,6 +1,7 @@
 using System.Dynamic;
 using Dapper.Contrib.Extensions;
 using Microsoft.Identity.Client;
+using System.Collections.Generic;
 
 namespace AcessoDados2.Models
 {

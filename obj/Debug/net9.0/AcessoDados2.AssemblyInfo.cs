@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AcessoDados2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5fdc2a88b3c8fd94a4d9b02c02e1710da61fad1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e0aa14dead71c5f5bbc7c00318910a78960d71e")]
 [assembly: System.Reflection.AssemblyProductAttribute("AcessoDados2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AcessoDados2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
