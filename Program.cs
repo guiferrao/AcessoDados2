@@ -1,4 +1,7 @@
-﻿using AcessoDados2.Screens.TagScreens;
+﻿using AcessoDados2.Screens.CategoryScreens;
+using AcessoDados2.Screens.RoleScreens;
+using AcessoDados2.Screens.TagScreens;
+using AcessoDados2.Screens.UserScreens;
 using Microsoft.Data.SqlClient;
 
 namespace AcessoDados2
@@ -43,13 +46,13 @@ namespace AcessoDados2
                 switch (option.Key)
                 {
                     case ConsoleKey.D1:
-                        //MenuUserScreen.Load();
+                        MenuUserScreen.Load();
                         break;
                     case ConsoleKey.D2:
-                        //MenuRoleScreen.Load();
+                        MenuRoleScreen.Load();
                         break;
                     case ConsoleKey.D3:
-                        //MenuCategoryScreen.Load();
+                        MenuCategoryScreen.Load();
                         break;
                     case ConsoleKey.D4:
                         MenuTagScreen.Load();
